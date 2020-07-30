@@ -1,2 +1,2 @@
-# competitive-programming
+# c++
 coding competition
