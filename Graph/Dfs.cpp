@@ -1,6 +1,7 @@
 
 vector<vector<int> adj(n);
 vector<int> parent;
+
 parent.assign(n, -1)
 void dfs(int source) {
 	visited[source] = true;
