@@ -1,9 +1,8 @@
 struct Node {
 	int data;
-	Node *left, *right;
+	Node *next;
 	Node() {
-		left = NULL;
-		right = NULL;
+		next = NULL
 	}
 };
 
@@ -15,23 +14,12 @@ void insert(int data) {
 		root = newNode;
 	}
 	else {
-		Node *head, *p;
+		Node *head;
 		head = root;
-		while (head != NULL) {
+		while (head->next != NULL) {
 			p = head;
-			if (data < root->data) {
-				head = head->left;
-			} 
-			else {
-				head = head->right;
-			}
+			head = head->next;
 		}
-		head = newNode;
-		if (p->data > data) {
-			p->left = head;
-		}
-		else {
-			p->right = head;
-		}
+		head->next = newNode;
 	}
 }
