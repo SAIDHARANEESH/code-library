@@ -15,7 +15,3 @@ void binarySearch(int a[], int left, int right, int number) {
     }
     cout << "Number not found";
 }
-int main() {
-
-    return 0;
-}
