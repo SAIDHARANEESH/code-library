@@ -1,5 +1,5 @@
 const int INF = 1000000000;
-vector<vector<pair<int, int>> adj;
+vector<vector<pair<int, int>>> adj;
 
 void dijkstra(int s, vector<int> &d, vector<int> &p) {
 	int n = adj.size();
