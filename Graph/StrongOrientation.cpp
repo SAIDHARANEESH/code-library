@@ -1,5 +1,6 @@
 vector<vector<pair<int, int>>> adj;
 vector<pair<int, int>> edges;
+
 vector<int> tin, low;
 int bridge_cnt;
 string orient;
@@ -7,15 +8,15 @@ vector<bool> edge_used;
 void find_bridges(int v) {
 	static int time = 0;
 	low[v] = tin[v] = time++;
-	for (auto p = adj[v]) {
+	for (auto p : adj[v]) {
 		if (edge_used[p.second]) continue;
 		edge_used[p.second] = true;
-		orient[p.second] = v == edges[p.second].first ? '>' : '<';
+		orient[p.second] = v == edges[p.second].first '>' : '<';
 		int nv = p.first;
 		if (tin[nv] == -1) {
 			find_bridges(nv);
 			low[v] = min(low[v], low[nv]);
-			if (low[nv] > tin[v]) {
+			if (low[nv] > tin[nv]) {
 				bridge_cnt++;
 			}
 		} else {
@@ -32,7 +33,7 @@ int main() {
 	low.resize(n, -1);
 	orient.resize(m);
 	edges.resize(m);
-	edge_used.resize(m);
+	edges_used.resize(m);
 	for (int i = 0; i < m; i++) {
 		int a, b;
 		cin >> a >> b;
@@ -48,5 +49,5 @@ int main() {
 			find_bridges(v);
 		}
 	}
-	cout << comp_cnt + bridge_cnt << orient.c_str();
+	cout << comp_cnt + bridge_cnt << "\n" << orient.c_str();
 }
