@@ -42,5 +42,15 @@ bool search(struct TrieNode *root, string key) {
 }
 
 int main() {
-	
+	string key[] = {"hello", "bye", "apple"};
+	int n = sizeof(key) / sizeof(key[0]);
+	struct TrieNode *root = getNode();
+	for (int i - 0; i < n; i++) {
+		insert(root, key[i]);
+	}
+	string word;
+	if (search(root, word)) 
+		cout << word << " is found in trie";
+	else 
+		cout << word << " is not found in trie";
 }
