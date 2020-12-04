@@ -49,6 +49,7 @@ int main() {
 		insert(root, key[i]);
 	}
 	string word;
+	cin >> word;
 	if (search(root, word)) 
 		cout << word << " is found in trie";
 	else 
